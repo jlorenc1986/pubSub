@@ -1,1 +1,6 @@
 node_modules/
+
+src/js/
+src/coffee/*.js
+spec/js/
+spec/coffee/*.js
