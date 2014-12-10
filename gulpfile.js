@@ -1,15 +1,19 @@
-var gulp = require('gulp');
-
-var clean = require('gulp-clean');
-var jshint = require('gulp-jshint');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var coffee = require('gulp-coffee');
-var watch  = require ('gulp-watch');
+var gulp 	= require('gulp'),
+    clean 	= require('gulp-clean'),
+ 	jshint 	= require('gulp-jshint'),
+ 	concat 	= require('gulp-concat'),
+ 	uglify 	= require('gulp-uglify'),
+ 	coffee 	= require('gulp-coffee'),
+ 	watch  	= require ('gulp-watch'),
+	jasmine = require('gulp-jasmine'); 
 
 var bases = {
 
-	scripts:['./src/coffee/*.coffee','./spec/coffee/*-spec.coffee']
+	scripts:['./src/coffee/*.coffee',
+			 './spec/coffee/*-spec.coffee',
+			 './src/js/*.js',
+			 './spec/js/*-spec.js'
+			 ]
 } 
 
 
@@ -25,7 +29,6 @@ gulp.task('coffee',function() {
 		.pipe(coffee({bare:true}))
 		.pipe(gulp.dest('./spec/js/'));
 
-
 });
 
 gulp.task('default',function() {
@@ -34,5 +37,11 @@ gulp.task('default',function() {
 	gulp.watch(bases.scripts[0],['coffee']);
 	gulp.watch(bases.scripts[1],['coffee']);
 
+
+});
+
+gulp.task('test',function(){
+
+	gulp.src('./spec/js/*-spec.js').pipe(jasmine());
 
 });

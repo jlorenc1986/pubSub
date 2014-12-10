@@ -30,6 +30,9 @@
     "jasmine-node": "^2.0.0",
     "jasmine-sinon": "^0.4.0",
     "jquery": "~2.1.1",
-    "sinon": "^1.12.1"
+    "sinon": "^1.12.1",
+    "jasmine-expect": "~1.22.2",
+    "jasmine-utils": "~0.2.0",
+    "istanbul": "~0.3.5"
   }
 }

@@ -4,3 +4,4 @@ src/js/
 src/coffee/*.js
 spec/js/
 spec/coffee/*.js
+npm-debug.log
