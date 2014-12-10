@@ -7,9 +7,11 @@ class Editor
 
 	topics : []
 
-	publish : (topics,args) =>
+	publish : (topic,args) =>
 		
-		console.log "da mostrare ", topics , args
+		subscribers = @topics[topic]
+		many  = (if subscribers then subscribers.length else 0) 
+		subscribers[len].func topic, args  while len--
 
 	ajaxCall : () =>
 		data =
