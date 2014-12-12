@@ -4,7 +4,7 @@
   "description": "an example of pubSub",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/jasmine-node spec/coffee/*-spec.coffee --coffee --verbose"
   },
   "repository": {
     "type": "git",
@@ -33,14 +33,13 @@
     "sinon": "^1.12.1",
     "jasmine-expect": "~1.22.2",
     "jasmine-utils": "~0.2.0",
-    "istanbul": "~0.3.5"
+    "istanbul": "~0.3.5",
+    "gulp-faster-browserify": "~0.2.1",
+    "vinyl-source-stream": "~1.0.0",
+    "hbsfy": "~2.2.1"
   },
-  "engines":{
-    "node":"0.10.32",
-    "npm":"2.1.2"
-    },
-  "scripts":{
-  	"test" : "node_modules/.bin/jasmine-node spec/coffee/*-spec.coffee --coffee --verbose" 
+  "engines": {
+    "node": "0.10.32",
+    "npm": "2.1.2"
   }
-
 }

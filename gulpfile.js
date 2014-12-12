@@ -1,11 +1,13 @@
-var gulp 	= require('gulp'),
-    clean 	= require('gulp-clean'),
- 	jshint 	= require('gulp-jshint'),
- 	concat 	= require('gulp-concat'),
- 	uglify 	= require('gulp-uglify'),
- 	coffee 	= require('gulp-coffee'),
- 	watch  	= require ('gulp-watch'),
-	jasmine = require('gulp-jasmine'); 
+var gulp 		= require('gulp'),
+    clean 		= require('gulp-clean'),
+ 	jshint 		= require('gulp-jshint'),
+ 	concat 		= require('gulp-concat'),
+ 	uglify 		= require('gulp-uglify'),
+ 	coffee 		= require('gulp-coffee'),
+ 	watch  		= require ('gulp-watch'),
+	jasmine 	= require('gulp-jasmine'),
+	browserify 	= require('browserify'),
+	source 		= require('vinyl-source-stream');
 
 var bases = {
 
@@ -45,3 +47,11 @@ gulp.task('test',function(){
 	gulp.src('./spec/js/*-spec.js').pipe(jasmine());
 
 });
+
+gulp.task('dist',function () {
+	// body...
+return browserify('./src/js/Editor.js',{standalone:"doit"})
+		.bundle()
+		.pipe(source('bundle.js'))
+		.pipe(gulp.dest('./dist/scripts/'));
+})
