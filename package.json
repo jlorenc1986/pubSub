@@ -40,7 +40,7 @@
     "npm":"2.1.2"
     },
   "scripts":{
-  	"test" : "jasmine-node spec/coffee/*-spec.coffee --coffee --verbose" 
+  	"test" : "node_modules/.bin/jasmine-node spec/coffee/*-spec.coffee --coffee --verbose" 
   }
 
 }
