@@ -35,6 +35,10 @@
     "jasmine-utils": "~0.2.0",
     "istanbul": "~0.3.5"
   },
+  "engines":{
+    "node":"0.10.32",
+    "npm":"2.1.2"
+    },
   "scripts":{
   	"test" : "./node-modules/bin/jasmine-node .spec/coffee/*-spec.coffee --coffee --verbose" 
   }
