@@ -13,4 +13,5 @@ Written in Coffescript and tested with JASMINE using Gulp as task manager
 
 #### Testing
 In order to run the tests
+
 1.  run > gulp test
